@@ -45,12 +45,6 @@
  </div>
 
  <div class="button-bar">
-     <a class="button" style="background:red; color:white" id="motor_up">up</a>
-     <a class="button" style="background:green; color:white" id="motor_down">down</a>
-     <a class="button" style="background:blue; color:white" id="motor_stop">stop</a>
- </div>
-
- <div class="button-bar">
      <a class="button" style="background:red; color:white" id="led_red">Red</a>
      <a class="button" style="background:green; color:white" id="led_green">Green</a>
      <a class="button" style="background:blue; color:white" id="led_blue">Blue</a>
@@ -188,30 +182,6 @@
         }
         // document.querySelector('#led_blue').addEventListener('touchstart', led_blue);
         document.querySelector('#led_blue').addEventListener('click', led_blue);
-		
-		function motor_up() {
-            var topic = device_id+'/in/write';
-            var commond = '{"motor_up":true}';
-            client.publish(topic, commond);
-        }
-        // 
-        document.querySelector('#motor_up').addEventListener('click', motor_up);
-		
-		function motor_down() {
-            var topic = device_id+'/in/write';
-            var commond = '{"motor_down":true}';
-            client.publish(topic, commond);
-        }
-        // 
-        document.querySelector('#motor_down').addEventListener('click', motor_down);
-		
-		function motor_stop() {
-            var topic = device_id+'/in/write';
-            var commond = '{"motor_stop":true}';
-            client.publish(topic, commond);
-        }
-        // 
-        document.querySelector('#motor_stop').addEventListener('click', motor_stop);
     }
 
     // 日志打印在页面的部分    
